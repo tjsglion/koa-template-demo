@@ -1,0 +1,26 @@
+const _ = require('lodash');
+const { join } = require('path');
+
+let config = {
+  staticDir: join(__dirname, '../../../', 'assets'),
+  viewDir: join(__dirname, '../../client', 'views'),
+  baseUrl: 'http://www.sdgswl.com'
+};
+
+if ('development' === process.env.NODE_ENV) {
+  const localConfig = {
+    port: 3333,
+    baseUrl: 'http://www.sdgswl.com'
+  };
+  config = _.extend(config, localConfig);
+}
+
+if ('production' === process.env.NODE_ENV) {
+  const localConfig = {
+    port: 80,
+    baseUrl: 'http://www.sdgswl.com'
+  };
+  config = _.extend(config, localConfig);
+}
+
+module.exports = config;
