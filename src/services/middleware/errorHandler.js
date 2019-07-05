@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   /**
    * 针对 404， 500 进行容错处理
    * @param {*} app

@@ -1,15 +1,15 @@
-const Koa = require('koa');
-const router = require('koa-router')();
-const render = require('koa-swig');
-const co = require('co');
-const { getAllRouter } = require('./services/controllers/index');
-const { resolve } = require('path');
-const static = require('koa-static');
-const {error} = require('./services/middleware/errorHandler');
-const {logger, accessLogger} = require('./services/config/koaLogger');
-const config = require('./services/config');
+import Koa from 'koa';
+import Router from 'koa-router';
+import render from 'koa-swig';
+import co from 'co';
+import { getAllRouter } from './services/controllers/index';
+import { resolve } from 'path';
+import koaStatic from 'koa-static';
+import {error} from './services/middleware/errorHandler';
+import {logger, accessLogger} from './services/config/koaLogger';
+import config from './services/config';
 const app = new Koa();
-
+const router = new Router();
 // 加载日志中间件
 app.use(accessLogger());
 
@@ -17,11 +17,11 @@ app.use(accessLogger());
 error(app, logger);
 
 // 加载静态资源
-app.use(static(config.staticDir));
+app.use(koaStatic(config.staticDir));
 
-// const config = require('./webpack.config');
-// const webpack = require('webpack');
-// const koaWebpack = require('koa-webpack');
+// const config from './webpack.config');
+// const webpack from 'webpack');
+// const koaWebpack from 'koa-webpack');
 getAllRouter(app, router);
 
 app.context.render = co.wrap(render({

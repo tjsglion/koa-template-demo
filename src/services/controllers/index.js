@@ -2,7 +2,7 @@ const HomeController = require('./HomeController');
 
 const homeController = new HomeController();
 
-module.exports = {
+export default {
   getAllRouter: (app, router) => {
     router
       .get('/', homeController.actionIndex)

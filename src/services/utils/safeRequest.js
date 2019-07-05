@@ -1,6 +1,6 @@
-const fetch = require('node-fetch');
-const config = require('../config/index');
-const {logger} = require('../config/koaLogger');
+import fetch from 'node-fetch';
+import config from '../config/index';
+import {logger} from '../config/koaLogger';
 class SafeRequest {
   constructor (url) {
     this.url = url;
@@ -45,4 +45,4 @@ class SafeRequest {
   }
 }
 
-module.exports = SafeRequest;
+export default SafeRequest;

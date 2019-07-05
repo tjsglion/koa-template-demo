@@ -1,5 +1,5 @@
-const _ = require('lodash');
-const { join } = require('path');
+import _ from 'lodash';
+import { join } from 'path';
 
 let config = {
   staticDir: join(__dirname, '../../../', 'assets'),
@@ -23,4 +23,4 @@ if ('production' === process.env.NODE_ENV) {
   config = _.extend(config, localConfig);
 }
 
-module.exports = config;
+export default config;
