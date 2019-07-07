@@ -6,7 +6,7 @@ const {resolve} = require('path');
 const replace = require('rollup-plugin-replace');
 
 // 入口文件
-const entries = resolve(__dirname, './', 'src/**/*.js');
+const entries = resolve(__dirname, './', 'src/services/**/*.js');
 const clearies = resolve(__dirname, './', 'src/services/config/index.js');
 // 清洗文件
 // 开发环境

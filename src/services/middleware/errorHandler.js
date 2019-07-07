@@ -4,7 +4,7 @@ export default {
    * @param {*} app
    * @param {*} logger 记录错误日志信息
    */
-  error (app, logger) {
+  error: (app, logger) => {
     // 处理500
     app.use(async (ctx, next) => {
       try {

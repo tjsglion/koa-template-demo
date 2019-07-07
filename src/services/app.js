@@ -2,14 +2,17 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import render from 'koa-swig';
 import co from 'co';
-import { getAllRouter } from './services/controllers/index';
+import indexController from './controllers/index';
 import { resolve } from 'path';
 import koaStatic from 'koa-static';
-import {error} from './services/middleware/errorHandler';
-import {logger, accessLogger} from './services/config/koaLogger';
-import config from './services/config';
+import errorHandler from './middleware/errorHandler';
+import koaLogger from './config/koaLogger';
+import config from './config';
 const app = new Koa();
 const router = new Router();
+const { getAllRouter } = indexController;
+const { error } = errorHandler;
+const { logger, accessLogger } = koaLogger;
 // 加载日志中间件
 app.use(accessLogger());
 
@@ -18,7 +21,7 @@ error(app, logger);
 
 // 加载静态资源
 app.use(koaStatic(config.staticDir));
-
+// console.log(indexController, getAllRouter);
 // const config from './webpack.config');
 // const webpack from 'webpack');
 // const koaWebpack from 'koa-webpack');

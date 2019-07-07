@@ -13,10 +13,10 @@ const files = glob.sync('./src/client/views/**/*.entry.js');
 for (let item of files) {
     if (/.+\/([a-zA-Z0-9]+-[a-zA-Z0-9]+)(\.entry\.js$)/g.test(item)) {
         const entryKeys = RegExp.$1;
-        const {dir, name} = entryKeys.split('-');
+        const [dir, name] = entryKeys.split('-');
         console.log(dir, name);
         _plugins.push(new htmlWebpackPlugin({
-            filename: `../views/${dir}/pages/${name}.html`,
+            filename: `../views/${dir}/pages/${name}.html`, // 发布到远程
             template: resolve(__dirname, './', `src/client/views/${dir}/pages/${name}.html`)
         }));
         entries[entryKeys] = item;
@@ -24,6 +24,10 @@ for (let item of files) {
 }
 const config = {
     entry: entries,
+    output: {
+      path: resolve(__dirname, './dist/assets'),
+      filename: 'scripts/[name].[hash:8].bundle.js'
+    },
     plugins: [..._plugins]
 };
 

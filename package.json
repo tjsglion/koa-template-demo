@@ -11,6 +11,7 @@
     "build": "babel ./assets/js/add.js --out-file ./assets/js/add-bundle.js",
     "test": "mocha ./test/e2e/*.js",
     "pretest": "echo \"$npm_package_config_port\"",
+    "server:start": "supervisor ./dist/app.js",
     "server:dev": "scripty",
     "server:prod": "scripty",
     "server:hint": "scripty",
