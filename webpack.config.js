@@ -5,7 +5,7 @@ const _mergeConfig = require(resolve(__dirname, './', `config/webpack.${_mergeMo
 const merge = require('webpack-merge');
 const glob = require('glob');
 const htmlWebpackPlugin = require('html-webpack-plugin');
-
+const htmlAfterWebpackPlugin = require('./config/htmlAfterWebpackPlugin');
 const entries = {}
 const _plugins = [];
 // 获取入口文件
@@ -14,10 +14,12 @@ for (let item of files) {
     if (/.+\/([a-zA-Z0-9]+-[a-zA-Z0-9]+)(\.entry\.js$)/g.test(item)) {
         const entryKeys = RegExp.$1;
         const [dir, name] = entryKeys.split('-');
-        console.log(dir, name);
+        // console.log(dir, name);
         _plugins.push(new htmlWebpackPlugin({
             filename: `../views/${dir}/pages/${name}.html`, // 发布到远程
-            template: resolve(__dirname, './', `src/client/views/${dir}/pages/${name}.html`)
+            chunks: ['runtime', entryKeys], // 配置加载需要的模块
+            template: resolve(__dirname, './', `src/client/views/${dir}/pages/${name}.html`),
+            inject: false // 不注入js或css
         }));
         entries[entryKeys] = item;
     }
@@ -25,10 +27,24 @@ for (let item of files) {
 const config = {
     entry: entries,
     output: {
-      path: resolve(__dirname, './dist/assets'),
-      filename: 'scripts/[name].[hash:8].bundle.js'
+        publicPath: '/',
+        path: resolve(__dirname, './dist/assets/'),
+        filename: 'scripts/[name].[hash:8].bundle.js'
     },
-    plugins: [..._plugins]
+    plugins: [
+        ..._plugins,
+        new htmlAfterWebpackPlugin(),
+    ],
+    resolve: {
+        alias: { // 别名
+            '@': resolve('./src/client/components')
+        }
+    },
+    optimization: {
+        runtimeChunk: { // 抽取运行时公共代码
+            name: 'runtime'
+        }
+    }
 };
 
 module.exports = merge(config, _mergeConfig);

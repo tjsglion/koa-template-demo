@@ -1,7 +1,0 @@
-[2019-07-04T11:38:23.513] [INFO] access - ::1 - - "GET /favicon.ico HTTP/1.1" 200 124 "http://localhost:3333/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-04T11:41:41.027] [INFO] access - ::1 - - "GET / HTTP/1.1" 200 472 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-04T11:41:41.042] [INFO] access - ::1 - - "GET /js/index.js HTTP/1.1" 200 111 "http://localhost:3333/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-04T11:41:41.146] [INFO] access - ::1 - - "GET /favicon.ico HTTP/1.1" 200 124 "http://localhost:3333/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-04T11:41:44.167] [INFO] access - ::1 - - "GET /add HTTP/1.1" 200 729 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-04T11:41:44.183] [INFO] access - ::1 - - "GET /favicon.ico HTTP/1.1" 200 124 "http://localhost:3333/add" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-04T11:41:44.522] [INFO] access - ::1 - - "GET /js/add.js HTTP/1.1" 200 143 "http://localhost:3333/add" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"

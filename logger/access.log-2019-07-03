@@ -1,3 +1,0 @@
-[2019-07-03T14:45:51.285] [INFO] access - ::1 - - "GET /add HTTP/1.1" 200 729 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-03T14:45:51.416] [INFO] access - ::1 - - "GET /js/add.js HTTP/1.1" 200 143 "http://localhost:3333/add" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"
-[2019-07-03T14:45:51.471] [INFO] access - ::1 - - "GET /favicon.ico HTTP/1.1" 200 124 "http://localhost:3333/add" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36"

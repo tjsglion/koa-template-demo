@@ -21,10 +21,7 @@ error(app, logger);
 
 // 加载静态资源
 app.use(koaStatic(config.staticDir));
-// console.log(indexController, getAllRouter);
-// const config from './webpack.config');
-// const webpack from 'webpack');
-// const koaWebpack from 'koa-webpack');
+
 getAllRouter(app, router);
 
 app.context.render = co.wrap(render({
@@ -35,9 +32,6 @@ app.context.render = co.wrap(render({
   writeBody: false
 }));
 
-// app.use(async ctx => ctx.body = await ctx.render('index.html'));
-// const compile = webpack(config);
-// const middleware = await koaWebpack({ compiler });
 app.listen(config.port, () => {
   console.log('启动服务成功...');
 });

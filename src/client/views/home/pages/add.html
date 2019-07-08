@@ -1,11 +1,11 @@
-{% extends 'pages/views/layout.html' %}
+{% extends 'pages:common/layout.html' %}
 {% block title %}Koa实战添加页{% endblock %}
 {% block styles %}
     <!-- injectcss -->
 {% endblock %}
 {% block content %}
-    {% includes 'components/banner/banner.html' %}
-    {% includes 'components/home/add/add.html' %}
+    {% include 'components:banner/banner.html' %}
+    {% include 'components:home/add/add.html' %}
 {% endblock %}
 {% block scripts %}
     <!-- injectjs -->
