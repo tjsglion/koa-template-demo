@@ -2,6 +2,9 @@ const copyWebpackPlugin = require('copy-webpack-plugin');
 const {join} = require('path');
 
 module.exports = {
+  output: {
+    publicPath: '/'
+  },
   plugins: [
     new copyWebpackPlugin([
       {

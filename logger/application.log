@@ -1,6 +1,2 @@
-[2019-07-08T02:59:41.286] [ERROR] application - { [Error: ENOENT: no such file or directory, open '/Users/tj/workspace/koa-template-demo/dist/config/views/home/pages/list.html']
-  errno: -2,
-  code: 'ENOENT',
-  syscall: 'open',
-  path:
-   '/Users/tj/workspace/koa-template-demo/dist/config/views/home/pages/list.html' }
+[2019-07-09T23:55:30.830] [ERROR] application - ReferenceError: s is not defined
+    at actionAdd (/Users/tj/workspace/koa-template-demo/dist/controllers/HomeController.js:33:7)

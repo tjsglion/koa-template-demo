@@ -27,7 +27,7 @@ for (let item of files) {
 const config = {
     entry: entries,
     output: {
-        publicPath: '/',
+        // publicPath: '/',
         path: resolve(__dirname, './dist/assets/'),
         filename: 'scripts/[name].[hash:8].bundle.js'
     },

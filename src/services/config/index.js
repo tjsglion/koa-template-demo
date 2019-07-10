@@ -2,8 +2,8 @@ import _ from 'lodash';
 import { join } from 'path';
 
 let config = {
-  staticDir: join(__dirname, './', 'assets'),
-  viewDir: join(__dirname, './', 'views'),
+  staticDir: join(__dirname, '../', 'assets'),
+  viewDir: join(__dirname, '../', 'views'),
   baseUrl: 'http://www.sdgswl.com',
   port: 3333
 };

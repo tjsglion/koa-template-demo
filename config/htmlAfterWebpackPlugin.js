@@ -4,8 +4,8 @@ const assetHelps = (data) => {
     const js = [];
     const css = [];
     const dir = {
-        js: (jsItem) => `<script src="${jsItem}"></script>`,
-        css: (cssItem) => `<link rel="stylesheet" href="${cssItem}">`
+        js: (jsItem) => `<script src="${jsItem}" class="lazyload-js"></script>`,
+        css: (cssItem) => `<link rel="stylesheet" class="lazyload-css" href="${cssItem}">`
     }
     for (let item of data.css) {
         css.push(dir.css(item));
